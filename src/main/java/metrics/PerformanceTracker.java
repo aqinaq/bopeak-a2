@@ -21,6 +21,9 @@ public class PerformanceTracker {
         System.out.println("Swaps: " + swaps);
         System.out.println("Array Accesses: " + arrayAccesses);
     }
+    public long getComparisons() { return comparisons; }
+    public long getSwaps() { return swaps; }
+    public long getArrayAccesses() { return arrayAccesses; }
 
     public void exportToCSV(String filename) {
         FileWriter writer = null;
