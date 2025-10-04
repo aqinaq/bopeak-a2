@@ -99,6 +99,41 @@ public class MaxHeap {
         }
         System.out.println();
     }
+    public void buildHeap(int[] arr) {
+        if (arr.length > heap.length) {
+            System.out.println("Array too big for heap capacity!");
+            return;
+        }
+        size = arr.length;
+        for (int i = 0; i < arr.length; i++) {
+            heap[i] = arr[i];
+            tracker.addArrayAccess(1);
+        }
+        for (int i = size / 2 - 1; i >= 0; i--) {
+            heapifyDown(i);
+        }
+    }
+    private void heapifyDown(int i) {
+        int largest = i;
+        int left = left(i);
+        int right = right(i);
+
+        if (left < size && heap[left] > heap[largest]) {
+            tracker.addComparison();
+            largest = left;
+        }
+        if (right < size && heap[right] > heap[largest]) {
+            tracker.addComparison();
+            largest = right;
+        }
+
+        if (largest != i) {
+            swap(i, largest);
+            tracker.addSwap();
+            tracker.addArrayAccess(2);
+            heapifyDown(largest);
+        }
+    }
     public PerformanceTracker getTracker() {
         return tracker;
     }
