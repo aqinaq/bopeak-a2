@@ -25,7 +25,6 @@ public class BenchmarkRunner {
             runBenchmark(n);
         }
     }
-
     private static void runBenchmark(int n) {
         MaxHeap heap = new MaxHeap(n);
         PerformanceTracker tracker = heap.getTracker();
@@ -50,6 +49,7 @@ public class BenchmarkRunner {
 
         long end = System.currentTimeMillis();
         long elapsed = end - start;
+        tracker.setElapsedTime(elapsed); // сохраняем время в трекер
 
         System.out.println(n + "," + elapsed + "," +
                 tracker.getComparisons() + "," +
