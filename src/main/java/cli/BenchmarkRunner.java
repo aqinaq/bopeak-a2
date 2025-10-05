@@ -51,11 +51,13 @@ public class BenchmarkRunner {
         long end = System.currentTimeMillis();
         long elapsed = end - start;
 
+        tracker.setTimeMs(elapsed);
+
         System.out.println(n + "," + elapsed + "," +
                 tracker.getComparisons() + "," +
                 tracker.getSwaps() + "," +
                 tracker.getArrayAccesses());
 
-        tracker.exportToCSV("benchmark_" + n + ".csv");
+        tracker.exportToCSV("benchmark_" + n + ".csv", n);
     }
 }
