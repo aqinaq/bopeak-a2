@@ -63,10 +63,5 @@ The project includes:
     - increasing sequence
     - random large inputs
 - Cross-validation with Java's built-in `PriorityQueue` for correctness.
-##  Results Summary
-
-| Input Size | Comparisons | Swaps  | Array Accesses |
-|------------|-------------|--------|----------------|
-| 100        | 711         | 542    | 1384           |
-| 1000       | 11,950      | 8,559  | 20,118         |
-| 10000      | 169,664     | 119,392| 268,784        |
+- 
+![img.png](img.png)
