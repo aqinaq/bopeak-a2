@@ -7,7 +7,7 @@ public class PerformanceTracker {
     private long comparisons = 0;
     private long swaps = 0;
     private long arrayAccesses = 0;
-    private long timeMs = 0; // NEW: time in milliseconds
+    private long timeMs = 0;
 
     public void reset() {
         comparisons = 0;
