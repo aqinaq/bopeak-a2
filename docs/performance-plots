@@ -1,0 +1,4 @@
+n,Comparisons,Swaps,ArrayAccesses,ElapsedTime(ms)
+100,680,517,1334,1
+1000,12009,8603,20206,16
+10000,169812,119582,269164,56
